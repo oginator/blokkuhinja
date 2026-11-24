@@ -361,6 +361,52 @@ form { position: relative; }
 }
 .mobile-cta .btn { width: 100%; }
 
+.kitchen { --cab: #e6d2a4; --cab-line: #c4a574; --top: #8d5a3b; --tall: #5c3b28; }
+.kitchen[data-dezen="bela"] { --cab: #f7f4ee; --cab-line: #ddd4c8; --top: #e4ddd4; --tall: #d8d0c6; }
+.kitchen[data-dezen="grafit"] { --cab: #3f4744; --cab-line: #2c3331; --top: #2a312e; --tall: #24352e; }
+.kitchen .cab { fill: var(--cab); stroke: var(--cab-line); }
+.kitchen .top { fill: var(--top); }
+.kitchen .tall { fill: var(--tall); }
+
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.swatch i {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.swatch.is-on { border-color: var(--forest); box-shadow: inset 0 0 0 1px var(--forest); }
+.swatch-hrast { background: linear-gradient(135deg, #f0ddb0, #c4a06a 55%, #8d5a3b); }
+.swatch-bela { background: linear-gradient(135deg, #fff, #e7e1d8); }
+.swatch-grafit { background: linear-gradient(135deg, #6a726e, #24352e); }
+
+.dezen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.dezen-card { padding: 18px; }
+.dezen-card .sample {
+  height: 120px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+}
+.sample-hrast { background: linear-gradient(#f3e6c4 0 62%, #8d5a3b 62% 78%, #f6f1e8 78%); }
+.sample-bela { background: linear-gradient(#f7f4ee 0 62%, #e4ddd4 62% 78%, #fbf9f6 78%); }
+.sample-grafit { background: linear-gradient(#3f4744 0 62%, #2a312e 62% 78%, #ece7e0 78%); }
+
 :focus-visible {
   outline: 2px solid var(--oak);
   outline-offset: 3px;
@@ -395,7 +441,7 @@ form { position: relative; }
   .nav a:hover, .nav a.active { background: rgba(255, 255, 255, 0.08); color: #fff; }
   .mobile-cta { display: block; }
   body { padding-bottom: 78px; }
-  .type-grid, .steps, .material-grid, .strip, .footer-grid, .form-row { grid-template-columns: 1fr; }
+  .type-grid, .steps, .material-grid, .strip, .footer-grid, .form-row, .dezen-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

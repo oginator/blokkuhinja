@@ -1,3 +1,25 @@
+const DEZENI = ["hrast", "bela", "grafit"];
+
+function applyDezen(name) {
+  const dezen = DEZENI.includes(name) ? name : "hrast";
+  document.querySelectorAll(".kitchen").forEach((el) => el.setAttribute("data-dezen", dezen));
+  document.querySelectorAll(".swatch").forEach((btn) => {
+    btn.classList.toggle("is-on", btn.getAttribute("data-dezen") === dezen);
+    btn.setAttribute("aria-pressed", String(btn.getAttribute("data-dezen") === dezen));
+  });
+  try { sessionStorage.setItem("bk-dezen", dezen); } catch (e) {}
+}
+
+document.querySelectorAll(".swatch").forEach((btn) => {
+  btn.addEventListener("click", () => applyDezen(btn.getAttribute("data-dezen")));
+});
+
+if (document.querySelector(".kitchen, .swatch")) {
+  let saved = "hrast";
+  try { saved = sessionStorage.getItem("bk-dezen") || "hrast"; } catch (e) {}
+  applyDezen(saved);
+}
+
 const header = document.querySelector(".site-header");
 const nav = document.querySelector(".nav");
 const menuBtn = document.querySelector(".menu-btn");
@@ -62,9 +84,9 @@ if (form) {
       `Telefon: ${data.telefon || ""}`,
       `Email: ${data.email || "nije naveden"}`,
       `Grad: ${data.grad || ""}`,
+      `Model: ${data.model || ""}`,
+      `Dezen: ${data.dezen || ""}`,
       `Raspored: ${data.raspored || ""}`,
-      `Front: ${data.front || ""}`,
-      `Okvirna dužina: ${data.duzina || ""}`,
       `Poruka: ${data.poruka || ""}`,
     ].join("\n");
 
