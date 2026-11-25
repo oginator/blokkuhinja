@@ -74,7 +74,7 @@ p { margin: 0 0 12px; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 74px;
+  min-height: 96px;
 }
 .brand {
   display: flex;
@@ -93,7 +93,7 @@ p { margin: 0 0 12px; }
   flex-shrink: 0;
 }
 .mark svg { width: 24px; height: 24px; }
-.brand .logo, .footer-brand .logo { height: 48px; width: auto; }
+.brand .logo, .footer-brand .logo { height: 84px; width: auto; border-radius: 10px; }
 .logo-text { font-size: 15px; line-height: 1.05; color: var(--ink); }
 .logo-text b { display: block; font-weight: 560; color: var(--oak-deep); }
 
@@ -422,7 +422,7 @@ form { position: relative; }
 
 @media (max-width: 800px) {
   .desk { display: none; }
-  .brand .logo { height: 40px; }
+  .brand .logo, .footer-brand .logo { height: 56px; }
   .menu-btn { display: flex; }
   .nav {
     display: none;
