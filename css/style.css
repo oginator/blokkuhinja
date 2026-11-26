@@ -44,6 +44,7 @@ p { margin: 0 0 12px; }
 .wrap { width: min(var(--max), calc(100% - var(--pad) * 2)); margin-inline: auto; }
 .muted { color: var(--muted); }
 .lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 42rem; }
+.promise { margin: 4px 0 0; color: var(--brass); font-weight: 700; font-size: 1.12rem; }
 .eyebrow {
   margin: 0 0 10px;
   color: var(--oak-deep);
