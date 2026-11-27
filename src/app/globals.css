@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #12110f;
+  --color-ink: #f6f1e6;
+  --color-sand: #1a1816;
+  --color-card: #24211e;
+  --color-muted: #b3a696;
+  --color-line: rgba(198, 161, 90, 0.32);
+  --color-wood: #c6a15a;
+  --color-wood-dark: #e8d7a4;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  color: #e8d7a4;
+}
+
+::selection {
+  background: rgba(198, 161, 90, 0.35);
+  color: #f6f1e6;
+}
+
+:focus-visible {
+  outline: 2px solid #c6a15a;
+  outline-offset: 3px;
+}
+
+dialog {
+  margin: auto;
+  max-width: min(32rem, calc(100vw - 2rem));
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
