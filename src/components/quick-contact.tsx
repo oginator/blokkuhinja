@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, X } from "lucide-react";
+import { Mail, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/data/site";
@@ -19,6 +19,13 @@ export function QuickContact() {
             </button>
           </div>
           <p className="mt-1 text-sm leading-5 text-muted">Poruka ide na adresu radionice.</p>
+          <a
+            href={site.phoneHref}
+            className="mt-4 flex items-center gap-2 rounded-2xl bg-sand px-3 py-3 text-sm font-semibold"
+          >
+            <Phone size={16} className="text-wood" />
+            {site.phone}
+          </a>
           <a
             href={`mailto:${site.email}`}
             className="mt-4 flex items-center gap-2 rounded-2xl bg-sand px-3 py-3 text-sm font-semibold"

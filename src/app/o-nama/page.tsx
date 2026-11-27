@@ -2,7 +2,7 @@ import { Reveal } from "@/components/reveal";
 import { blockPrice } from "@/data/kitchens";
 import { site } from "@/data/site";
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -73,9 +73,16 @@ export default function AboutPage() {
         <aside className="rounded-[1.75rem] border border-line bg-card p-6 md:p-8">
           <h2 className="text-3xl">Javite se</h2>
           <p className="mt-3 text-sm leading-6 text-muted">
-            Za blok kuhinju ili kuhinju po meri pišite na email. Tu dogovaramo merenje i šta ostaje od aparata.
+            Za blok kuhinju ili kuhinju po meri pozovite ili pišite. Tu dogovaramo merenje i šta ostaje od aparata.
           </p>
-          <a href={`mailto:${site.email}`} className="mt-6 flex items-center gap-3 rounded-2xl bg-sand px-4 py-4">
+          <a href={site.phoneHref} className="mt-6 flex items-center gap-3 rounded-2xl bg-sand px-4 py-4">
+            <Phone className="text-wood" />
+            <span>
+              <span className="block text-xs tracking-wide text-muted uppercase">Telefon</span>
+              <span className="font-semibold">{site.phone}</span>
+            </span>
+          </a>
+          <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-3 rounded-2xl bg-sand px-4 py-4">
             <Mail className="text-wood" />
             <span>
               <span className="block text-xs tracking-wide text-muted uppercase">Email</span>

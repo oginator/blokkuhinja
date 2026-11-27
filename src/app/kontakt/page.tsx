@@ -1,7 +1,7 @@
 import { ContactInquiry } from "@/components/contact-inquiry";
 import { site } from "@/data/site";
 import type { Metadata } from "next";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -19,7 +19,14 @@ export default function KontaktPage() {
         <p className="mt-4 leading-7 text-muted">
           U poruci napišite grad, otprilike koji zid je slobodan i da li kuhinja već postoji. Tačnu meru uzimamo na licu mesta.
         </p>
-        <a href={`mailto:${site.email}`} className="mt-8 flex items-center gap-3 rounded-[1.5rem] bg-sand p-5">
+        <a href={site.phoneHref} className="mt-8 flex items-center gap-3 rounded-[1.5rem] bg-sand p-5">
+          <Phone className="text-wood" />
+          <span>
+            <span className="block text-xs tracking-wide text-muted uppercase">Telefon</span>
+            <span className="font-semibold">{site.phone}</span>
+          </span>
+        </a>
+        <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-3 rounded-[1.5rem] bg-sand p-5">
           <Mail className="text-wood" />
           <span>
             <span className="block text-xs tracking-wide text-muted uppercase">Email</span>

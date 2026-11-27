@@ -46,6 +46,10 @@ export function SiteFooter() {
           <p className="mt-3 text-sm leading-6">
             blokkuhinja.rs
             <br />
+            <a className="underline decoration-line underline-offset-4 hover:text-wood" href={site.phoneHref}>
+              {site.phone}
+            </a>
+            <br />
             <a className="underline decoration-line underline-offset-4 hover:text-wood" href={`mailto:${site.email}`}>
               {site.email}
             </a>
