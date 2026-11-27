@@ -52,7 +52,7 @@ export function InquiryForm({
           _template: "table",
           _captcha: "false",
           _replyto: data.email || undefined,
-          tip: data.tip === "veleprodaja" ? "Firma / Salon (Veleprodaja)" : "Fizičko lice (Maloprodaja)",
+          tip: data.tip === "veleprodaja" ? "Firma / Salon (Veleprodaja)" : "Fizičko lice",
           firma: data.firma || "",
           ime: data.ime || "",
           telefon: data.telefon || "",
@@ -94,7 +94,7 @@ export function InquiryForm({
         <div className="mt-2 grid gap-2 sm:grid-cols-2">
           {(
             [
-              ["maloprodaja", "Fizičko lice (Maloprodaja)"],
+              ["maloprodaja", "Fizičko lice"],
               ["veleprodaja", "Firma / Salon (Veleprodaja)"],
             ] as const
           ).map(([value, label]) => (
